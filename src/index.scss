@@ -93,6 +93,15 @@ h3 {font-size: var(--fs-h3);}
   margin-bottom: 1em;
 }
 
+#about{
+  height: 50vh;
+  text-align: center;
+}
+
+.section_subtitle-about{
+  width: 75vw;
+}
+
 /* Header */
 
 header{
@@ -176,6 +185,7 @@ nav li{
     min-width: 250px;
     position: relative;
     z-index: 2;
+    overflow: "hidden"
   }
   
   .section_subtitle-intro{
