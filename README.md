@@ -1,62 +1,89 @@
-# Portfolio Website
+# Developer Portfolio
 
-A modern, responsive portfolio website built with React and TypeScript.
+A modern, responsive portfolio website built with React, TypeScript, and Vite.
 
 ## Features
 
 - Responsive design
-- Modern UI with animations
-- Dark/Light theme support
-- Contact form
+- Modern UI/UX
+- Contact form with EmailJS integration
+- Smooth scrolling navigation
 - Project showcase
-- Skills section
+- Skills and experience sections
 
-## Profile Image Setup
+## Development
 
-To add your profile image to the Hero section:
+### Prerequisites
 
-1. Add your profile image file to the `public` folder
-2. Name it `profile-image.jpg` (or update the src in `src/components/Hero.tsx`)
-3. Recommended image specifications:
-   - Square aspect ratio (1:1)
-   - Minimum 400x400 pixels
-   - JPG or PNG format
-   - Professional headshot or portrait
+- Node.js (version 18 or higher)
+- npm
 
-The image will automatically be styled as a circular avatar with hover effects. If the image fails to load, it will fallback to the emoji placeholder.
+### Installation
 
-## Contact Form Setup
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/portfolio.git
+cd portfolio
+```
 
-The contact form uses EmailJS to send emails directly from the frontend. To set it up:
+2. Install dependencies:
+```bash
+npm install
+```
 
-1. Follow the detailed setup guide in `EMAILJS_SETUP.md`
-2. Replace the placeholder values in `src/components/Contact.tsx` with your EmailJS credentials
-3. Test the form to ensure emails are being sent correctly
+3. Start the development server:
+```bash
+npm run dev
+```
 
-The form includes:
-- Real-time validation
-- Loading states
-- Success/error messages
-- Automatic form reset after successful submission
+The application will be available at `http://localhost:3000`
 
-## Getting Started
-
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-2. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-3. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-## Build for Production
+### Building for Production
 
 ```bash
 npm run build
+```
+
+## Deployment to GitHub Pages
+
+### Automatic Deployment (Recommended)
+
+This project is configured with GitHub Actions for automatic deployment. Simply push to the `main` branch and the site will be automatically deployed to GitHub Pages.
+
+### Manual Deployment
+
+1. Update the `homepage` field in `package.json` with your GitHub Pages URL:
+```json
+"homepage": "https://yourusername.github.io/portfolio"
+```
+
+2. Deploy to GitHub Pages:
+```bash
+npm run deploy
+```
+
+### GitHub Pages Configuration
+
+1. Go to your repository settings on GitHub
+2. Navigate to "Pages" in the sidebar
+3. Set the source to "GitHub Actions"
+
+## Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── About.tsx       # About section
+│   ├── Contact.tsx     # Contact form
+│   ├── Experience.tsx  # Experience section
+│   ├── Footer.tsx      # Footer component
+│   ├── Header.tsx      # Navigation header
+│   ├── Hero.tsx        # Hero section
+│   ├── Projects.tsx    # Projects showcase
+│   └── Skills.tsx      # Skills section
+├── App.tsx             # Main App component
+├── main.tsx           # Application entry point
+└── index.css          # Global styles
 ```
 
 ## Technologies Used
@@ -64,5 +91,9 @@ npm run build
 - React 18
 - TypeScript
 - Vite
-- CSS3 with modern features
-- Responsive design principles
+- CSS3
+- EmailJS (for contact form)
+
+## License
+
+MIT License
