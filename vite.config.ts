@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
 	plugins: [react()],
-	base: '/portfolio/', // Add base path for GitHub Pages
+	base: 'https://bwhua.github.io/portfolio/', // Add base path for GitHub Pages
 	server: {
 		port: 3000,
 		open: true,
