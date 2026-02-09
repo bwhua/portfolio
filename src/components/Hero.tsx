@@ -1,30 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Hero.css';
 
 const Hero: React.FC = () => {
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [isTyping, setIsTyping] = useState(true);
-
-  const texts = [
+  const titles = [
     'Full Stack Developer',
     'Web Developer',
     'UI/UX Designer',
-    'Problem Solver',
     'Python Developer',
     'API Developer',
   ];
-
-  useEffect(() => {
-    const typingInterval = setInterval(() => {
-      setIsTyping(false);
-      setTimeout(() => {
-        setCurrentTextIndex((prev) => (prev + 1) % texts.length);
-        setIsTyping(true);
-      }, 1000);
-    }, 3000);
-
-    return () => clearInterval(typingInterval);
-  }, [texts.length]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -43,10 +27,13 @@ const Hero: React.FC = () => {
 						</h1>
 						<div className='hero-subtitle'>
 							I'm a{' '}
-							<span className={`typing-text ${isTyping ? 'typing' : ''}`}>
-								{texts[currentTextIndex]}
-							</span>
-							<span className='cursor'>|</span>
+							<div className='titles-container'>
+								{titles.map((title, index) => (
+									<span key={index} className='title-badge'>
+										{title}
+									</span>
+								))}
+							</div>
 						</div>
 						<p className='hero-description'>
 							Passionate about creating beautiful, functional, and user-friendly web applications. I

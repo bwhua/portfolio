@@ -3,7 +3,7 @@ import './Skills.css';
 
 interface Skill {
   name: string;
-  level: number;
+  years: number;
   icon: string;
 }
 
@@ -17,32 +17,32 @@ const Skills: React.FC = () => {
     {
       title: 'Frontend Development',
       skills: [
-        { name: 'React', level: 95, icon: '⚛️' },
-        { name: 'TypeScript', level: 90, icon: '📘' },
-        { name: 'JavaScript', level: 95, icon: '🟨' },
-        { name: 'HTML/CSS', level: 90, icon: '🎨' },
-        { name: 'Next.js', level: 85, icon: '⚡' },
+        { name: 'React', years: 6, icon: '⚛️' },
+        { name: 'TypeScript', years: 4, icon: '📘' },
+        { name: 'JavaScript', years: 6, icon: '🟨' },
+        { name: 'HTML/CSS', years: 6, icon: '🎨' },
+        { name: 'Next.js', years: 4, icon: '⚡' },
       ]
     },
     {
       title: 'Backend Development',
       skills: [
-        { name: 'Node.js', level: 85, icon: '🟢' },
-        { name: 'Python', level: 90, icon: '🐍' },
-        { name: 'PostgreSQL', level: 82, icon: '🐘' },
-        { name: 'REST APIs', level: 90, icon: '🔗' },
-        { name: 'Java', level: 80, icon: '🟢' }
+        { name: 'Node.js', years: 6, icon: '🟢' },
+        { name: 'Python', years: 8, icon: '🐍' },
+        { name: 'PostgreSQL', years: 8, icon: '🐘' },
+        { name: 'REST APIs', years: 4, icon: '🔗' },
+        { name: 'Java', years: 8, icon: '🟢' }
       ]
     },
     {
       title: 'Tools & Technologies',
       skills: [
-        { name: 'Git', level: 95, icon: '📝' },
-        { name: 'Docker', level: 70, icon: '🐳' },
-        { name: 'Figma', level: 80, icon: '🎨' },
-        { name: 'ESRI/GIS', level: 90, icon: '🌍' },
-        { name: 'Jenkins', level: 60, icon: '🔄' },
-        { name: 'Electron', level: 80, icon: '📱' },
+        { name: 'Git', years: 5, icon: '📝' },
+        { name: 'Docker', years: 12, icon: '🐳' },
+        { name: 'Figma', years: 2, icon: '🎨' },
+        { name: 'ESRI/GIS', years: 4, icon: '🌍' },
+        { name: 'Jenkins', years: 1, icon: '🔄' },
+        { name: 'Electron', years: 2, icon: '📱' },
       ]
     }
   ];
@@ -60,21 +60,19 @@ const Skills: React.FC = () => {
             <div key={categoryIndex} className="skill-category">
               <h3 className="category-title">{category.title}</h3>
               <div className="skills-grid">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="skill-item">
-                    <div className="skill-header">
-                      <span className="skill-icon">{skill.icon}</span>
-                      <span className="skill-name">{skill.name}</span>
-                      <span className="skill-level">{skill.level}%</span>
+                {category.skills.map((skill, skillIndex) => {
+                  const yearsText = skill.years === 1 ? '1 year' : `${skill.years} years`;
+                  
+                  return (
+                    <div key={skillIndex} className="skill-item">
+                      <div className="skill-header">
+                        <span className="skill-icon">{skill.icon}</span>
+                        <span className="skill-name">{skill.name}</span>
+                        <span className="skill-level">{yearsText}</span>
+                      </div>
                     </div>
-                    <div className="skill-bar">
-                      <div 
-                        className="skill-progress" 
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ))}

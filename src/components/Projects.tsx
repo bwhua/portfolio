@@ -17,6 +17,16 @@ const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
+      id: 1,
+      title: 'Murder Mystery Board',
+      description: 'An interactive murder mystery cork board with red wire connections. Create suspects, add testimonials, connect people, and build a timeline of events.',
+      image: '🕵️',
+      technologies: ['React', 'TypeScript', 'Vite', 'CSS', 'HTML'],
+      liveUrl: 'https://murder-mystery-drab.vercel.app/',
+      githubUrl: 'https://github.com/bwhua/murder-mystery',
+      category: 'frontend'
+    },
+    {
       id: 3,
       title: 'Portfolio Website',
       description: 'A portfolio website to showcase my projects and skills',
