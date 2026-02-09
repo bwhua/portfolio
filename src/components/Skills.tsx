@@ -38,7 +38,7 @@ const Skills: React.FC = () => {
       title: 'Tools & Technologies',
       skills: [
         { name: 'Git', years: 5, icon: '📝' },
-        { name: 'Docker', years: 12, icon: '🐳' },
+        { name: 'Docker', years: 2, icon: '🐳' },
         { name: 'Figma', years: 2, icon: '🎨' },
         { name: 'ESRI/GIS', years: 4, icon: '🌍' },
         { name: 'Jenkins', years: 1, icon: '🔄' },
